@@ -19,19 +19,9 @@
   <section>
     <h2>Our Cookies</h2>
 
-    <div>
-      <h3>Chocolate Chip</h3>
-      <p>Classic chocolate chip cookie.</p>
-      <p>$4.50</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div>
-      <h3>Biscoff</h3>
-      <p>Cookie butter inspired goodness.</p>
-      <p>$4.50</p>
-      <button>Add to Cart</button>
-    </div>
+    @for (product of products; track product.id) {
+      <app-product-card [product]="product"></app-product-card>
+    }
   </section>
 </main>
 

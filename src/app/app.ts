@@ -1,12 +1,33 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Product } from './product';
+import { ProductCard } from './product-card/product-card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ProductCard],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('feed-the-cheeks-frontend');
+  products: Product[] = [
+    {
+      id: 1,
+      name: 'Chocolate Chip',
+      description: 'Classic chocolate chip cookie.',
+      price: 4.5,
+      imageUrl: 'assets/images/chocolate-chip.jpg',
+      category: 'Cookies',
+      available: true,
+    },
+    {
+      id: 2,
+      name: 'Biscoff',
+      description: 'Cookie butter inspired goodness.',
+      price: 4.5,
+      imageUrl: 'assets/images/biscoff.jpg',
+      category: 'Cookies',
+      available: true,
+    },
+  ];
 }
