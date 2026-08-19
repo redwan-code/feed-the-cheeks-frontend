@@ -29,5 +29,23 @@ export class App {
       category: 'Cookies',
       available: true,
     },
+    {
+      id: 3,
+      name: 'Cookies & Cream',
+      description: 'Cookies and cream packed into a soft baked cookie.',
+      price: 4.5,
+      imageUrl: 'assets/images/cookies-and-cream.jpg',
+      category: 'Cookies',
+      available: true,
+    },
+    {
+      id: 4,
+      name: 'Red Velvet',
+      description: 'Rich red velvet cookie with a sweet creamy finish.',
+      price: 4.5,
+      imageUrl: 'assets/images/red-velvet.jpg',
+      category: 'Cookies',
+      available: true,
+    },
   ];
 }

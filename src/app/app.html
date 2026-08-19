@@ -19,9 +19,11 @@
   <section>
     <h2>Our Cookies</h2>
 
-    @for (product of products; track product.id) {
-      <app-product-card [product]="product"></app-product-card>
-    }
+    <div class="product-grid">
+      @for (product of products; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
   </section>
 </main>
 
