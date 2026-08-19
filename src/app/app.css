@@ -1,43 +1,98 @@
-body {
-  margin: 0;
+:host {
+  display: block;
   font-family: Arial, sans-serif;
-  background-color: deeppink;
+  color: #1f1f1f;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 24px 48px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  gap: 28px;
 }
 
 nav a {
-  margin-left: 20px;
   text-decoration: none;
-  color: black;
+  color: #1f1f1f;
+  font-weight: 600;
 }
 
 main {
-  padding: 40px;
+  padding: 60px 48px;
 }
 
 section {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
-/* Displays our cookie cards in a responsive grid */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
 footer {
-  padding: 20px 40px;
+  padding: 24px 48px;
   text-align: center;
+  border-top: 1px solid #eeeeee;
+}
+
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+
+  main {
+    padding: 40px 20px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero {
+  background: #f7f1ea;
+  border-radius: 20px;
+  padding: 30px 50px;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
 }

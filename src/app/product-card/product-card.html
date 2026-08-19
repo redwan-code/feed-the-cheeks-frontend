@@ -5,7 +5,7 @@
 
   <p>{{ product.description }}</p>
 
-  <p>${{ product.price }}</p>
+  <p>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</p>
 
   <button>Add to Cart</button>
 </div>
