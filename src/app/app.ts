@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CurrencyPipe } from '@angular/common';
 import { Product } from './product';
 import { ProductCard } from './product-card/product-card';
+import { Cart } from './cart';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ProductCard],
+  imports: [ProductCard, CurrencyPipe],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
+  cartOpen = false;
+
+  constructor(public cart: Cart) {}
+
   products: Product[] = [
     {
       id: 1,
@@ -48,4 +53,12 @@ export class App {
       available: true,
     },
   ];
+
+  openCart(): void {
+    this.cartOpen = true;
+  }
+
+  closeCart(): void {
+    this.cartOpen = false;
+  }
 }
