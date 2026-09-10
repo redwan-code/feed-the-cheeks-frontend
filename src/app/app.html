@@ -1,6 +1,12 @@
 <header>
   <h1>Feed the Cheeks</h1>
-
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search menu"
+      [(ngModel)]="searchTerm"
+    >
+  </div>
   <nav>
     <a href="#">Home</a>
     <a href="#">Menu</a>
@@ -10,6 +16,7 @@
       Cart ({{ cart.getTotalQuantity() }})
     </button>
   </nav>
+
 </header>
 
 <main>
@@ -17,19 +24,42 @@
     <div class="hero-content">
       <h2>Fresh Cookies. Big Cheeks.</h2>
       <p>Freshly baked cookies made for every craving.</p>
-      <button>Order Now</button>
     </div>
   </section>
 
+  @if (cookieProducts.length > 0) {
+    <section>
+      <h2>Our Cookies</h2>
+
+      <div class="product-grid">
+        @for (product of cookieProducts; track product.id) {
+          <app-product-card [product]="product"></app-product-card>
+        }
+      </div>
+    </section>
+  }
+  @if (drinkProducts.length > 0) {
   <section>
-    <h2>Our Cookies</h2>
+    <h2>Drinks</h2>
 
     <div class="product-grid">
-      @for (product of products; track product.id) {
+      @for (product of drinkProducts; track product.id) {
         <app-product-card [product]="product"></app-product-card>
       }
     </div>
   </section>
+  }
+  @if (milkProducts.length > 0 ){
+  <section>
+    <h2>Milk</h2>
+
+    <div class="product-grid">
+      @for (product of milkProducts; track product.id) {
+        <app-product-card [product]="product"></app-product-card>
+      }
+    </div>
+  </section>
+  }
 </main>
 
 @if (cartOpen) {
@@ -91,5 +121,5 @@
 }
 
 <footer>
-  <p>© 2026 Feed the Cheeks</p>
+  <p>© 2022 Feed the Cheeks</p>
 </footer>
